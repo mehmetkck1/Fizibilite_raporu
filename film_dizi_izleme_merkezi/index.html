@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Film/Dizi İzleme Merkezi | Giriş</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/lucide-static/font/lucide.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div class="bg-noise"></div>
+
+  <main class="auth-wrap">
+    <section class="auth-card">
+      <div class="auth-left">
+        <div class="logo pulse" style="width:54px;height:54px;border-radius:20px">
+          <i class="icon-film" style="font-size:28px;color:white;"></i>
+        </div>
+        <h1>Film/Dizi İzleme Merkezi</h1>
+        <p>
+          Modern bir demo arayüz: <b>güncel / beğenilen</b> film ve dizileri keşfet,
+          favorile, trailer izlet ve resmi platform linklerine yönlen.
+        </p>
+
+        <div class="bullets">
+          <div class="b">
+            <div class="ic">★</div>
+            <div class="txt"><b>Trend & Top 10</b> listeleri + hızlı arama</div>
+          </div>
+          <div class="b">
+            <div class="ic">⚡</div>
+            <div class="txt">Kart animasyonları, modal oynatıcı, akıcı tasarım</div>
+          </div>
+          <div class="b">
+            <div class="ic">❤</div>
+            <div class="txt">Favoriler (localStorage) + son izlenen bilgisi</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="auth-right">
+        <!-- Auth Tabs -->
+        <div class="auth-tabs">
+          <button class="auth-tab active" data-tab="login">Giriş Yap</button>
+          <button class="auth-tab" data-tab="register">Kayıt Ol</button>
+        </div>
+
+        <!-- Login Form -->
+        <form id="loginForm" class="auth-form active" autocomplete="on">
+          <div class="field">
+            <label>E‑posta</label>
+            <input id="loginEmail" type="email" placeholder="ornek@mail.com" required />
+          </div>
+
+          <div class="field">
+            <label>Şifre</label>
+            <input id="loginPass" type="password" placeholder="••••" autocomplete="current-password" required />
+          </div>
+
+          <button class="btn primary" type="submit" style="margin-top:6px">Giriş Yap</button>
+
+          <div id="quickHint" class="mini" style="display:none">
+            Daha önce giriş yapılmış: <b>—</b>
+            <div style="margin-top:10px; display:flex; gap:10px; flex-wrap:wrap;">
+              <button type="button" class="btn" style="flex:1" id="continueBtn">Devam Et</button>
+              <span style="color:rgba(234,240,255,.6); font-size:12px; align-self:center;">(localStorage)</span>
+            </div>
+          </div>
+        </form>
+
+        <!-- Register Form -->
+        <form id="registerForm" class="auth-form" autocomplete="off">
+          <div class="field">
+            <label>Ad Soyad</label>
+            <input id="registerName" type="text" placeholder="Mehmet Küçük" required />
+          </div>
+
+          <div class="field">
+            <label>E‑posta</label>
+            <input id="registerEmail" type="email" placeholder="ornek@mail.com" required />
+          </div>
+
+          <div class="field">
+            <label>Şifre (min. 4 karakter)</label>
+            <input id="registerPass" type="password" placeholder="••••" autocomplete="new-password" required />
+          </div>
+
+          <div class="field">
+            <label>Şifre Tekrar</label>
+            <input id="registerPassConfirm" type="password" placeholder="••••" autocomplete="new-password" required />
+          </div>
+
+          <button class="btn primary" type="submit" style="margin-top:6px">Kayıt Ol</button>
+        </form>
+
+      </div>
+    </section>
+
+    <div class="footer">© 2024 Film/Dizi İzleme Merkezi</div>
+  </main>
+
+  <div id="toast" class="toast">...</div>
+
+  <script type="module" src="./assets/js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Film/Dizi İzleme Merkezi</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/lucide-static/font/lucide.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div class="bg-noise"></div>
+
+  <header class="topbar">
+    <div class="container">
+      <div class="topbar-inner">
+        <div class="brand">
+          <div class="logo">
+            <i class="icon-film" style="font-size:22px;color:white;"></i>
+          </div>
+          <div>
+            Film/Dizi Merkezi
+            <small id="userName">Kullanıcı</small>
+          </div>
+        </div>
+
+        <div class="search">
+          <span class="icon">🔎</span>
+          <input id="searchInput" placeholder="Film, dizi, tür ara… (Ctrl+K)" />
+          <span class="kbd">Ctrl K</span>
+        </div>
+
+        <div class="actions">
+          <button class="pill" id="clearFavBtn" title="Favorileri temizle">❤ Temizle</button>
+          <button class="pill primary" id="logoutBtn" title="Çıkış yap">Çıkış</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-card">
+          <div class="shine"></div>
+          <div class="hero-content">
+            <h2 class="h-title" id="heroTitle">—</h2>
+            <p class="h-sub" id="heroSub">—</p>
+
+            <div class="badges">
+              <span class="badge"><span class="dot"></span> Güncel listeler</span>
+              <span class="badge">❤ Favori sistemi</span>
+              <span class="badge">🎬 Trailer oynatıcı</span>
+              <span class="badge">🔗 Resmî linkler</span>
+            </div>
+
+            <div class="hero-actions">
+              <button class="btn primary" id="heroPlay">Öne Çıkanı İzle (Trailer)</button>
+              <button class="btn" id="heroRandom">Rastgele Seç</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card side-card">
+          <div class="stat-row">
+            <div class="stat">
+              <div class="k">Toplam içerik</div>
+              <div class="v" id="statTotal">—</div>
+            </div>
+            <div class="stat">
+              <div class="k">Favoriler</div>
+              <div class="v" id="statFav">—</div>
+            </div>
+          </div>
+          <div class="mini">
+            <b>Son izlenen:</b>
+            <div style="margin-top:8px; color: rgba(234,240,255,.9); font-weight:800" id="statLast">—</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tabs">
+        <button class="tab active" data-tab="trend">🔥 Trend</button>
+        <button class="tab" data-tab="top">🏆 Top 10</button>
+        <button class="tab" data-tab="new">🆕 Güncel</button>
+        <button class="tab" data-tab="fav">❤ Favoriler</button>
+      </div>
+    </section>
+
+    <section>
+      <div id="grid" class="grid"></div>
+    </section>
+
+    <div class="footer">
+      © 2024 Film/Dizi İzleme Merkezi
+    </div>
+  </main>
+
+  <!-- Modal -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-card">
+      <div class="modal-top">
+        <div class="title" id="mTitle">—</div>
+        <button id="mClose" aria-label="Kapat">Kapat ✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="player" id="player"></div>
+        <aside class="info">
+          <h3 class="h">Özet</h3>
+          <p class="p" id="mDesc">—</p>
+
+          <h3 class="h">Türler</h3>
+          <div class="pills" id="mTags"></div>
+
+          <h3 class="h">Nerede İzlenir?</h3>
+          <div class="pills" id="mWhere"></div>
+
+          <p class="helper" style="margin-top:10px">
+            İstersen burada “kendi videonu” da oynatacak şekilde geliştirebiliriz.
+          </p>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast">...</div>
+
+  <script type="module" src="assets/js/app.js"></script>
+</body>
+</html>
